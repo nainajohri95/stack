@@ -1,0 +1,71 @@
+public class stack1 
+{
+	static final int max = 1000;
+ 	int arr[] = new arr[max];
+ 	int top;
+  
+	stack1()
+	{
+		top=-1;
+  	}
+  	public boolean isempty()
+  	{
+		if(top==-1)
+		{
+          		return true;
+		}
+      		else
+		{
+          		return false;
+		}
+  	}
+	public boolean isfull()
+  	{
+      		if(top>=(max-1))
+		{
+			return true;
+		}
+          
+      		else
+		{
+          		return false;
+		}
+  	}
+  	public void push(int x)
+  	{
+    		if(isfull())
+		{
+        		System.out.println("stack overflow");
+		}
+    		else
+    		{
+        		top++;
+        		arr[top]=x;
+    		}
+  	}
+  	public int pop()
+  	{
+      		if(isempty())
+      		{
+          		System.out.println("stack underflow");
+          		return -1;
+      		}
+      		else
+           	{
+             		int x=arr[top];
+             		top--;
+             		return x;     
+           	}
+	}
+  	public static void main(String args[])
+  	{
+      		stack1 S =new stack1();
+      		S.push(10);
+      		S.push(20);
+      		S.push(30);
+      		System.out.println(S.pop());
+      		S.push(30);
+                S.push(40);
+  	}
+}
+
