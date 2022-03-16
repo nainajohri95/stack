@@ -1,0 +1,69 @@
+class Node
+{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+	}
+}
+public class stack
+{
+	Node top;
+	boolean isempty()
+	{
+		if(top==null)
+		{
+			return true;	
+		}
+		else	
+		{
+			return false;
+		}
+	}
+}
+public void push(int data)
+{
+	Node n=new Node();
+	n.next=top;
+	top=n;
+}
+public void pop()
+{
+	if(isempty())
+	{
+		System.out.println("stack underflow");
+		return -1;
+	}
+	else
+	{
+		int x=top.data;
+		top=top.next;
+		return x;
+	}
+}
+public void peek()
+{
+	if(isempty())
+	{
+		System.out.println("stack underflow");
+		return -1;
+	}
+	else
+	{
+		int x=top.data;
+		return x;
+	}
+
+public static void main(String args[])
+{
+	stack s=new stack();
+	System.out.println(s.pop());
+	s.push(10);
+	s.push(20);
+	System.out.println(s.pop());
+	s.push(30);
+	System.out.println(s.peek());
+	s.push(40);
+}
+}
